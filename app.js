@@ -14,7 +14,7 @@ dotenv.config();
 
 
 const app = express();
-
+const PORT = process.env.PORT || 8800;
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
@@ -28,6 +28,6 @@ app.use("/api/test", testRoute);
 // app.use("/api/chats", aichatRoute);
 
 
-app.listen(8800, () => {
+app.listen(PORT, () => {
   console.log("Server is running!");
 });
